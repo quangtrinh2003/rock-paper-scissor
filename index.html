@@ -5,8 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock - Paper - Scissor</title>
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <!-- Font from https://fonts.google.com/
+    Guide: https://www.digitalocean.com/community/tutorials/how-to-load-and-use-custom-fonts-with-css#finding-and-loading-a-font-file-from-a-hosted-service -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="header">
+        <h1>Rock - Paper - Scissor</h1>
+    </div>
+    <div class="play-zone">
+        <p class="decide">Ban chon: || May chon:</p>
+        <p class="score">0 - 0</p>
+        <div class="selection">
+            <div class="box rock">
+                <img src="./img/rock.png" alt="Rock">
+            </div>
+            <div class="box paper">
+                <img src="./img/paper.png" alt="Paper">
+            </div>
+            <div class="box scissor">
+                <img src="./img/scissor.png" alt="Scissor">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <span>Copyright by Trinh Phung Quang</span>
+    </div>
 </body>
 </html>

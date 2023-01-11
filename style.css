@@ -1,0 +1,59 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url('./img/design-space-paper-textured-background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Comic Neue', cursive;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    height: 300px;
+    width: auto;
+}
+
+p {
+    font-size: 50px;
+}
+
+.header {
+    display: flex;
+    font-size: 50px;
+    justify-content: center;
+}
+
+.play-zone {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.selection {
+    display: flex;
+    gap: 80px;
+}
+
+.box {
+    border: 1px solid red;
+    padding: 50px;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+}
+
+.footer {
+    font-size: 25px;
+    line-height: 35px;
+    text-align: center;
+    background-color: grey;
+    margin-top: 50px;
+}

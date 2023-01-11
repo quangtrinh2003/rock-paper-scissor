@@ -1,7 +1,31 @@
 //1. Rock
 //2. Paper
 //3. Scissor
+const arr = ['Búa', 'Bao', 'Kéo'];
 
+//Lay event bua keo bao
+const rock = document.querySelector('.rock');
+rock.addEventListener('click', () => {
+    playRound(1);
+});
+const paper = document.querySelector('.paper');
+paper.addEventListener('click', () => {
+    playRound(2);
+});
+const scissor =  document.querySelector('.scissor');
+scissor.addEventListener('click', () => {
+    playRound(3);
+});
+
+//Update bang lua chon
+const decide = document.querySelector('.decide');
+
+//Update bang diem
+const score = document.querySelector('.score');
+
+//Initialize score
+let playerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice()
 {
@@ -9,75 +33,39 @@ function getComputerChoice()
     return Math.floor(Math.random() * 3) + 1;
 }
 
-function getPlayerChoice()
+function playRound(playerChoice)
 {
-    let playerChoice = prompt("Hay nhap lua chon: ");
-    
-    if(playerChoice.toLowerCase() === "rock")
-    {
-        return 1;
-    }
-    else if(playerChoice.toLowerCase() === "paper")
-    {
-        return 2;
-    }
-    else
-    {
-        return 3;
-    }
-}
-
-function playRound(computerChoice, playerChoice)
-{
+    let computerChoice = getComputerChoice();
     //Draw
     if(computerChoice - playerChoice === 0)
     {
+        score.textContent = `${playerScore} - ${computerScore}`;
+        decide.textContent = `Bạn chọn: ${arr[playerChoice - 1]} và máy chọn: ${arr[computerChoice - 1]}`;
         return 0;
     }
     //Computer win
     if(computerChoice - playerChoice === 1)
     {
+        computerScore++;
+        score.textContent = `${playerScore} - ${computerScore}`;
+        decide.textContent = `Bạn chọn: ${arr[playerChoice - 1]} và máy chọn: ${arr[computerChoice - 1]}`;
         return 1;
     }
     if(playerChoice - computerChoice === 2)
     {
+        computerScore++;
+        score.textContent = `${playerScore} - ${computerScore}`;
+        decide.textContent = `Bạn chọn: ${arr[playerChoice - 1]} và máy chọn: ${arr[computerChoice - 1]}`;
         return 1;
     }
     //Computer lose
     if(computerChoice - playerChoice === 2 ||  computerChoice - playerChoice < 0)
     {
+        playerScore++;
+        score.textContent = `${playerScore} - ${computerScore}`;
+        decide.textContent = `Bạn chọn: ${arr[playerChoice - 1]} và máy chọn: ${arr[computerChoice - 1]}`;
         return 2;
     }
 }
 
-function printRoundResult(computerChoice, playerChoice, computerScore, playerScore)
-{
-    console.log(computerChoice + " " + playerChoice);
-    console.log(computerScore + " - " + playerScore);
-}
-
-function play()
-{
-    let computerScore = 0;
-    let playerScore = 0;
-    for(let i = 0; i < 5 ; i++)
-    {
-        const computerChoice = getComputerChoice();
-        const playerChoice = getPlayerChoice();
-        const roundResult = playRound(computerChoice, playerChoice);
-
-        if(roundResult === 1)
-        {
-            computerScore++;
-        }
-        else if(roundResult === 2)
-        {
-            playerScore++;
-        }
-
-        printRoundResult(computerChoice, playerChoice, computerScore, playerScore);
-    }
-}
-
-play();
 
